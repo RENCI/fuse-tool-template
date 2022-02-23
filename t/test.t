@@ -47,5 +47,6 @@ my $fn ;
 cleanup_out();
 
 $fn = "test-1.json";
-files_eq(f($fn), cmd("GET",    $fn, "config"),                                                                    "Get config for this plugin");
+generalize_output($fn, cmd("GET", rawf($fn), "service-info"), ["createdAt", "updatedAt"]);
+files_eq(f($fn), "t/out/${fn}",                                                    "Get config for this service");
 
