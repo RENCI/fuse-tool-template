@@ -41,7 +41,6 @@ git clone --recursive http://github.com/RENCI/<your-repo-name>
 * Make sure the test passes (`./up.sh; prove t/test.t` - check t/test.t on how to install the test harness dependencies)
 * Edit this README.md file and replace all occurrences of `fuse-tool-template` with your repo's name
 * Update the source files appropriately:
- - [ ] **config.json**: add any special configuration details for your tool. Don't stress over this, your tool API will be completely described by host:port/openapi.json
  - [ ] **docker-compose.yml**: replace `fuse-tool-template` with your repo's name and customize accordingly
  - [ ] **requirements.txt**: add your *version-locked* library requirements to the list
  - [ ] **sample.env**: add any required environmental variables, don't forget to also document them in this readme
