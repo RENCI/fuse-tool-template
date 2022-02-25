@@ -1,25 +1,6 @@
 {
-  "_comment": "-------End of GA4GH requirements----- (ignore this line)",
-  "contactUrl": "mailto:template@email.com",
-  "createdAt": "xxx",
-  "description": "Accepts tool parameters, gene expression and phenotype data, outputs results from an analysis.",
-  "documentationUrl": "https://github.com/RENCI/fuse-tool-template",
-  "environment": "test",
-  "id": "fuse-tool-template",
-  "name": "FUSE tool example",
-  "organization": {
-    "name": "RENCI",
-    "url": "https://renci.org"
-  },
-  "serviceDependencies": [],
-  "serviceType": "t",
-  "serviceTypeTitle": "Tool",
-  "title": "fuse-tool-template",
-  "type": {
-    "artifact": "fuse",
-    "group": "renci.org",
-    "version": "1.0.0"
-  },
-  "updatedAt": "xxx",
-  "version": "1.0.0"
+  "contents": "xxx",
+  "end_time": "xxx",
+  "start_time": "xxx",
+  "submitter_id": "test@email.com"
 }

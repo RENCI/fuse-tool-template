@@ -27,12 +27,13 @@ use Support;
 our $verbose = 0;
 our $dry_run = 0;
 
+our $SUBMITTER_ID='test@email.com';
+
 # read the .env file
 use Dotenv;      
 Dotenv->load;
 
-our $HOST_PATH = "http://localhost:$ENV{'API_PORT'}"; #8082;
-
+our $HOST_PATH = "http://localhost:$ENV{'API_PORT'}"; #8086;
 
 GetOptions('dry_run' => \$dry_run,
 	   'verbose' => \$verbose) or die "Usage: prove -v t/$0 [ :: [--verbose] ] \n";
@@ -47,6 +48,6 @@ my $fn ;
 cleanup_out();
 
 $fn = "test-1.json";
-generalize_output($fn, cmd("GET", rawf($fn), "service-info"), ["createdAt", "updatedAt"]);
-files_eq(f($fn), "t/out/${fn}",                                                    "Get config for this service");
+generalize_output($fn, cmd("POST", rawf($fn), "submit?submitter_id=${SUBMITTER_ID}&number_of_components=2", "-F 'gene_expression=@./t/input/expression.csv;type=application/vnd.ms-excel' -H 'Content-Type: multipart/form-data' -H 'accept: application/json'"), ["start_time", "end_time", "contents"]);
+files_eq(f($fn), "t/out/${fn}",                                                    "Get PCA table");
 
